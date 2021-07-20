@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>黑马项目-基于统计学/机器学习的用车行为分析</title>
+    <!-- META TAGS -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/flexslider.css">
+    <link rel="stylesheet" href="assets/css/animsition.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.css">
+
+    <!-- echarts -->
+    <script src="echarts.min.js"></script>
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+</head>
+
+<body class="animsition">
+
+    <!-- HEADER  -->
+    <header class="main-header">
+        <div class="container-fluid">
+                <!-- box-intro -->
+                <section class="box-intro bg-film">
+                        <div class="table-cell">
+
+                                <h3 class="box-headline letters rotate-2">
+                                        <span class="box-words-wrapper">
+                                                <b class="is-visible">构建上汽大众用户的用车行为评价体系</b>
+                                                <b>赋能“千人千面”的营销和运营模式</b>
+                                        </span>
+                                </h3>
+                                <h1>基于统计学/机器学习的用车行为分析</h1>
+
+                        </div>
+
+                        <div class="mouse">
+                                <div class="scroll"></div>
+                        </div>
+                </section>
+                <!-- end box-intro -->
+        </div>
+    </header>
+
+    <!-- SERVICES PARALAX -->
+    <section id="services" class="services mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background"  style="background-image: url(assets/img/bg3.png);">
+        <div class="section-overlay"></div>
+        <div class="container">
+            <div class="row center">
+                <div class="col-md-8 col-md-offset-2 col-sm-12">
+                    <div class="section-title-parralax">
+                        <div class="process-numbers">01</div>
+                        <h2>数据清理及单车探索</h2>
+                        <p class="module-subtitle">我们首先针对海量的驾驶数据进行“完”，“全”，“唯”，“一”的清洗和筛选，并结合业务理解及行业研究文献进行进一步的数据处理，确保样本连续且有分析意义。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 right col-full right-0">
+                    <i class="lnr lnr-rocket"></i>
+                    <h6>数据的完整性</h6>
+                    <p>RTM数据的传输是每隔28秒上传一次，因此连续的行驶数据<br>至关重要，我们将3%的断点数据先从样本之中筛选出来。
+                    </p>
+                </div>
+                <div class="col-lg-6 left col-full left-0">
+                    <i class="lnr lnr-laptop-phone"></i>
+                    <h6>数据的全面性</h6>
+                    <p>而数据的全面性则在后面的模型评价中产生重要的作用，
+                        <br>我们必须保证选取和计算的特征不需要进行拆分或合并。
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 right col-full right-0">
+                    <i class="lnr lnr-cart"></i>
+                    <h6>数据的合法性</h6>
+                    <p>这方面我们结合了实际业务的理解和相关文献理论的支持，
+                        <br>确保数据中不会出现异常的值，例如速度为负的情况。
+                    </p>
+                </div>
+                <div class="col-lg-6 left col-full left-0">
+                    <i class="lnr lnr-cog"></i>
+                    <h6>数据的唯一性</h6>
+                    <p>这个在大数据分析的情景下至关重要，关系着预测和分<br>析的准确度，
+                        我们将所有的数据会进行去重处理。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio">
+        <div class="top-right-separator hidden-xs"></div>
+        <div class="container">
+            <div class="col-md-8 col-md-offset-2 col-sm-12">
+                <div class="row center">
+                    <div class="section-title mb-100">
+                        <div class="process-numbers">02</div>
+                        <h2>探索数据</h2>
+                        <p class="module-subtitle" style="text-align: left;">我们整体的项目思路是循序渐进的从数据清洗到数据探索然后再到模型建立及重要指标的预测，因此不管在样本的选取还是算法的选择，团队采用了敏捷的开发模式，不断进行迭代和发现结果的验证。</p>
+                    </div>
+                </div>
+            </div>
+            <!-- categories  -->
+            <div class="col-md-3">
+                <div class="row categories-grid">
+                    <nav class="categories">
+                        <ul class="portfolio_filter">
+                            <li><a href="" class="active" data-filter="*">图表总览</a></li>
+                            <li><a href="" data-filter=".photography">车辆运行特征</a></li>
+                            <li><a href="" data-filter=".web">驾驶行为特征</a></li>
+                            <li><a href="" data-filter=".logo">充电行为特征</a></li>
+                            <li><a href="" data-filter=".graphics">能耗规律特征</a></li>
+                            <li><a href="" data-filter=".ads">通勤特征</a></li>
+                            <li><a href="" data-filter=".fashion">用户活动特征</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- all works -->
+            <div class="col-md-9">
+                <div class="row portfolio_container">
+                    <!-- single work -->
+                    <div class="col-md-4 photography">
+                        <a href="1.html" class="portfolio_item work-grid">
+                            <img src="assets/img/card1.png" alt="image">
+                            <div class="portfolio_item_hover">
+                                <div class="item_info">
+                                    <span>9张报表</span>
+                                    <em>统计分析</em>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end single work -->
+
+                    <!-- single work -->
+                    <div class="col-md-4 fashion logo">
+                        <a href="2.html" class="portfolio_item work-grid">
+                            <img src="assets/img/card2.png" alt="image">
+                            <div class="portfolio_item_hover">
+                                <div class="item_info">
+                                    <span>3张报表</span>
+                                    <em>统计分析</em>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end single work -->
+
+                    <!-- single work -->
+                    <div class="col-md-4 ads graphics">
+                        <a href="3.html" class="portfolio_item work-grid">
+                            <img src="assets/img/card3.png" alt="image">
+                            <div class="portfolio_item_hover">
+                                <div class="item_info">
+                                    <span>3类用户</span>
+                                    <em>聚类算法</em>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end single work -->
+
+                    <!-- single work -->
+                    <div class="col-md-4 fashion ads">
+                        <a href="4.html" class="portfolio_item work-grid">
+                            <img src="assets/img/card4.png" alt="image">
+                            <div class="portfolio_item_hover">
+                                <div class="item_info">
+                                    <span>2类用户</span>
+                                    <em>聚类算法</em>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end single work -->
+
+                    <!-- single work -->
+                    <div class="col-md-4 graphics ads">
+                        <a href="5.html" class="portfolio_item work-grid">
+                            <img src="assets/img/card5.png" alt="image">
+                            <div class="portfolio_item_hover">
+                                <div class="item_info">
+                                    <span>筛除2项特征</span>
+                                    <em>相关性分析</em>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end single work -->
+
+                    <!-- single work -->
+                    <div class="col-md-4 logo web photography">
+                        <a href="6.html" class="portfolio_item work-grid">
+                            <img src="assets/img/card6.png" alt="image">
+                            <div class="portfolio_item_hover">
+                                <div class="item_info">
+                                    <span>2项运营建议</span>
+                                    <em>统计分析</em>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end single work -->
+
+                    <!-- single work -->
+                    <div class="col-md-4 ads graphics">
+                        <a href="7.html" class="portfolio_item work-grid">
+                            <img src="assets/img/card7.png" alt="image">
+                            <div class="portfolio_item_hover">
+                                <div class="item_info">
+                                    <span>1项发现</span>
+                                    <em>模型构建</em>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end single work -->
+
+                    <!-- single work -->
+                    <div class="col-md-4 web fashion photography">
+                        <a href="8.html" class="portfolio_item work-grid">
+                            <img src="assets/img/card8.png" alt="image">
+                            <div class="portfolio_item_hover">
+                                <div class="item_info">
+                                    <span>4张报表</span>
+                                    <em>统计分析</em>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end single work -->
+
+                    <!-- single work -->
+                    <div class="col-md-4 fashion logo">
+                        <a href="9.html" class="portfolio_item work-grid">
+                            <img src="assets/img/card9.png" alt="image">
+                            <div class="portfolio_item_hover">
+                                <div class="item_info">
+                                    <span>2张报表</span>
+                                    <em>模型构建</em>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end single work -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- all works end -->
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- portfolio -->
+<br><br><br>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <svg preserveAspectRatio="none" viewBox="0 0 100 102" height="100" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="svgcolor-light">
+            <path d="M0 0 L50 100 L100 0 Z" fill="#fff" stroke="#fff"></path>
+        </svg>
+            <div class="container">
+                <div class="row mt-100 mb-50 footer-widgets">
+                    <!-- Start Contact Widget -->
+                    <div class="col-md-7 col-xs-12">
+                        <h1 style="color:#fff">More content is coming soon...</h1>
+                    </div><!-- .col-md-3 -->
+                    <!-- End Contact Widget -->
+
+                </div><!-- .row -->
+
+                <!-- Start Copyright -->
+                <div class="copyright-section">
+                    <div class="row">
+                        <div class="col-md-6">
+                        <div class="footer-widget twitter-widget">
+                                                        Email: zhangjun6@csvw.com <br>
+                                                        Phone: 021 - 69556070
+                        </div>                            
+                            <p>&copy; 2020 Jun Zhang -  SC Team </p>
+                        </div><!-- .col-md-6 -->
+                    </div><!-- .row -->
+                </div>
+                <!-- End Copyright -->
+            </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="assets/js/animated-headline.js"></script>
+    <script type="text/javascript" src="assets/js/menu.js"></script>
+    <script type="text/javascript" src="assets/js/modernizr.js"></script>
+    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
+    <script type="text/javascript" src="assets/js/init.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/smooth-scroll.js"></script>
+    <script type="text/javascript" src="assets/js/numscroller.js"></script>
+    <script type="text/javascript" src="assets/js/wow.min.js"></script>
+    <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+
+    <script type="text/javascript">
+        $(window).load(function() {
+            new WOW().init();
+
+            // initialise flexslider
+            $('.flexslider').flexslider({
+                animation: "fade",
+                directionNav: true,
+                controlNav: false,
+                keyboardNav: true,
+                slideToStart: 0,
+                animationLoop: true,
+                pauseOnHover: false,
+                slideshowSpeed: 4000,
+            });
+
+            smoothScroll.init();
+
+            // initialize isotope
+            var $container = $('.portfolio_container');
+            $container.isotope({
+                filter: '*',
+            });
+
+            $('.portfolio_filter a').click(function(){
+                $('.portfolio_filter .active').removeClass('active');
+                $(this).addClass('active');
+
+                var selector = $(this).attr('data-filter');
+                $container.isotope({
+                    filter: selector,
+                    animationOptions: {
+                        duration: 500,
+                        animationEngine : "jquery"
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>
