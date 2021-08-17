@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<script src="../static/lib/d3.min.js" charset="utf-8"></script> 
+	<script src="../static/lib/queue.v1.min.js"></script>
+	<script src="../static/lib/topojson.v1.min.js"></script>
+	<script src="../static/lib/d3.tip.v0.6.3.js"></script>
+
+	<script src="../js/countyDetails/init.js"></script>
+	<script src="../js/countyDetails/barRegular.js"></script>
+	<script src="../js/countyDetails/barStacked.js"></script>
+	<script src="../js/countyDetails/similarity.js"></script>
+	<script src="../js/countyDetails/countySelection.js"></script>
+	<script src="../js/map/map.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="../static/css/county_style.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+</head>
+
+<body>
+<!-- MAP -->
+<div id="chart_top" class="container">
+	<h1 class="title m-3">U.S. Health Condition & Potential Causes</h1>
+	<div class="row align-items-center">
+		<div id="chart_top_map" class="col-12 col-lg-9 rounded"></div>
+		<div id="top5Counties" class="col-12 col-lg-3">
+			<div class="healthyCounties col text-center">
+				<h5 style="display: inline-block;">Top 5 Most Healthy Counties</h5>
+				<p onclick="clickedCounty[0] = getData('Geo Names', 8091); state1Changed(); county1Changed();">Ouray, Colorado</p>
+				<p onclick="clickedCounty[0] = getData('Geo Names', 20097); state1Changed(); county1Changed();">Kiowa, Kansas</p>
+				<p onclick="clickedCounty[0] = getData('Geo Names', 8107); state1Changed(); county1Changed();">Routt, Colorado</p>
+				<p onclick="clickedCounty[0] = getData('Geo Names', 8113); state1Changed(); county1Changed();">San Miguel, Colorado</p>
+				<p onclick="clickedCounty[0] = getData('Geo Names', 27063); state1Changed(); county1Changed();">Jackson, Minnesota</p>
+			</div>
+			<div class="healthyCounties col text-center">
+				<h5 style="display: inline-block;">Top 5 Least Healthy Counties</h5>
+				<p onclick="clickedCounty[1] = getData('Geo Names', 21153); state2Changed(); county2Changed();">Magoffin, Kentucky</p>
+				<p onclick="clickedCounty[1] = getData('Geo Names', 21147); state2Changed(); county2Changed();">McCreary, Kentucky</p>
+				<p onclick="clickedCounty[1] = getData('Geo Names', 21051); state2Changed(); county2Changed();">Clay, Kentucky</p>
+				<p onclick="clickedCounty[1] = getData('Geo Names', 54109); state2Changed(); county2Changed();">Wyoming, West Virginia</p>
+				<p onclick="clickedCounty[1] = getData('Geo Names', 21131); state2Changed(); county2Changed();">Leslie, Kentucky</p>
+			</div>
+			</div>
+	</div>
+
+
+<!-- County DETAILS -->
+<div id="chart_bottom" class="container">
+	<h1 id="chart_bottom_title"> </h1>
+	<div class="row mt-3">
+		<div class="col-12 col-lg-6">
+			<div id="color_rect1"></div>
+			<div id="county1"></div>
+		</div>
+		<div class="col-12 col-lg-6">	
+			<div id="color_rect2"></div>
+			<div id="county2"></div>
+		</div>		
+	</div>
+
+	<div id="chart_bottom_graphs1" class="row col-12"></div>	
+</div>
+
+<script>
+var data;
+var selectedCountyIdx1, selectedCountyIdx2;
+var svg_map;
+var svg_base;
+var fipsList = [];
+var width_map = 960, height_map = 600;
+var width_detail=1280, height_detail=800;
+
+var rateById = d3.map();
+var nameById = d3.map();
+var stateById = d3.map();
+var ftpById = d3.map();
+
+var features;
+var tip;
+var projection, path, zoom;
+
+queue()
+	.defer(d3.json, "../static/data/us.json")
+	.defer(d3.tsv, "../static/data/data.tsv", function(d) { rateById.set(d.id, +d.poor_health);})
+	.defer(d3.tsv, "../static/data/data.tsv", function(d) { nameById.set(d.id, d.county);})
+	.defer(d3.tsv, "../static/data/data.tsv", function(d) { stateById.set(d.id, d.state);}) 
+	.defer(d3.tsv, "../static/data/data.tsv", function(d) { ftpById.set(d.id, +d.id);})
+	.defer(d3.tsv, "../static/data/final_data.tsv")
+	.await(init);
+
+function init(error, usJSON, rate, name, state, fips, countyDetails){
+	data = countyDetails;
+
+	setup();
+
+	ready(usJSON);
+	chart_selection();
+
+	// if(county1==null){
+	// 	// console.log("111")
+	// 	clickedCounty[0] = getData('Geo Names', 8091); state1Changed();county1Changed();		
+	// }
+	// if(county2==null){
+	// 	// console.log('222')
+	// 	clickedCounty[1] = getData('Geo Names', 21153); state2Changed(); county2Changed();
+	// }
+
+
+	//// refresh();
+	//// draw();
+}
+
+function draw(){
+	svg_base.remove();
+	// setup();
+	refresh();
+
+	var svg_chartStacked1 = svg_base.append("g");
+	var svg_chartStacked2 = svg_base.append("g");
+	var svg_chartBar1 = svg_base.append("g");
+	var svg_chartBar2 = svg_base.append("g");
+	var svg_chartBar3 = svg_base.append("g");
+
+	// draw charts
+	barStacked_draw(svg_chartStacked1, 0, 0, "Ethnicity", selectedCountyIdx1, selectedCountyIdx2);
+	barStacked_draw(svg_chartStacked2, 480, 0, "Age Group", selectedCountyIdx1, selectedCountyIdx2);
+	barRegular_draw(svg_chartBar1, 0, 225, "Economy", selectedCountyIdx1, selectedCountyIdx2);
+	barRegular_draw(svg_chartBar1, 200, 225, "Education", selectedCountyIdx1, selectedCountyIdx2);
+	barRegular_draw(svg_chartBar1, 480, 225, "Risk Factors", selectedCountyIdx1, selectedCountyIdx2);
+	barRegular_draw(svg_chartBar1, 750, 225, "Health Factors", selectedCountyIdx1, selectedCountyIdx2);
+
+}
+
+
+
+</script>
+
+<div id="footnote">
+SI649 Visualization - 2014 Winter <br>
+SungJin Nam, Jun Zhang, Madeleine Filloux, Luxi Chen
+</div>
+</body>
+
+
+</html>

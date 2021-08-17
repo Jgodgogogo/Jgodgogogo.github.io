@@ -1,0 +1,91 @@
+/*@font-face {
+	font-family: 'cutefont';
+	src:url('fonts/cutefont.ttf');
+	font-weight: normal;
+	font-style: normal;
+} */
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html { font-size: 100%; padding: 0; margin: 0;}
+
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+
+body {
+    /*font-family: 'cutefont';*/
+    font-family: 'Palatino';	
+    color: #cc6666;
+}
+img{
+	max-width: 100%;
+}
+
+a {
+	color: #cc6666;
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover {
+	color: #000;
+}
+
+.container > header {
+	width: 100%;
+	max-width: 80em;
+	margin: 0 auto;
+	padding: 2.875em 1.875em 1.875em;
+}
+
+.container > header h1 {
+	max-width: 100%;
+	width: 100%;
+	margin: 0 0 0.6em 0;
+	float: left;
+}
+.container > header h1 a { 
+	display: inline-block;
+	position: relative;
+	bottom: 1em;
+	left: 0em;
+	text-align: center;
+	width: 50px;
+	height: 50px;
+	background: #fff;
+	color: black;
+}
+.container > header h1 a:hover {
+	color: #cc6666;
+}
+
+.container > header h1 a:hover:after {
+	content: attr(data-info);
+	color: black;
+	position: absolute;
+	width: 400px;
+	left: 60px;
+	top: 10px;
+	vertical-align: middle;
+	text-align: left;
+	pointer-events: none;
+	font-size: 0.5em;
+	color: #cc6666;
+}
+
+@media screen and (max-width: 55em) {
+
+	.container > header h1 {
+		float: none;
+	}
+	.container > header h1 a{
+		display: none;
+	}
+	.container > header > span,
+	.container > header h1 {
+		text-align: center;
+	}
+
+	.container > header > span {
+		text-indent: 30px;
+	}
+}
