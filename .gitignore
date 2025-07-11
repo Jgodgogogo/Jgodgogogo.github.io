@@ -1,0 +1,46 @@
+# macOS 系统文件
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# VS Code 编辑器配置
+.vscode/
+*.code-workspace
+
+# Node.js 项目依赖（如果你用到）
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# 构建输出目录（如 Next.js、Vite、Webpack）
+dist/
+build/
+.out/
+.next/
+.vercel/
+
+# 日志和缓存文件
+*.log
+*.tmp
+.cache/
+coverage/
+
+# 环境配置文件（可选）
+.env
+.env.local
+.env.*.local
+
+# Git 临时文件
+*.swp
+*.swo
+
+# 图片处理工具生成的缩略图
+Thumbs.db
+
+# 其他 IDE 配置（可根据你使用的工具添加）
+.idea/
+*.iml
+
+# Python 项目（如果你用到）
+__pycache__/
+*.pyc
