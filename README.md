@@ -1,4 +1,4 @@
-# Jgodgogogo Portfolio Website
+# Jun Zhang's Personal Website
 
 欢迎来到我的个人作品集项目！这个仓库是我基于纯 HTML/CSS 以及 Next.js 模板构建的在线作品展示平台。你可以通过 [jgodgogogo.github.io](https://jgodgogogo.github.io) 访问网站。
 
