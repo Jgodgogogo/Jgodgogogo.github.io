@@ -44,3 +44,4 @@ Thumbs.db
 # Python 项目（如果你用到）
 __pycache__/
 *.pyc
+.DS_Store
