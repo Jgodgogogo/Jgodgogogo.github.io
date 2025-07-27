@@ -1,6 +1,6 @@
 'use client'
-import { TextMorph } from '@/components/ui/text-morph'
-import { ScrollProgress } from '@/components/ui/scroll-progress'
+import { TextMorph } from '@/components/motion-primitives/text-morph'
+import { ScrollProgress } from '@/components/motion-primitives/scroll-progress'
 import { useEffect, useState } from 'react'
 
 function CopyButton() {

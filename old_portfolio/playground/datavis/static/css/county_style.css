@@ -1,0 +1,177 @@
+/*county details*/
+body{
+	font-family: avenir;
+}
+
+h2 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+h3 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+h5 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+/*h5.simCatTitle{
+	display: inline;
+}
+*/
+.rect_red{
+	width:10px;
+	height:20px;
+	fill:red;
+}
+
+p{
+	font-size: 0.8em;
+}
+
+.healthyCounties{
+  margin: 50px 0px;
+}
+
+.healthyCounties > p {
+    cursor: pointer;
+}
+
+.healthyCounties h5{
+  margin-bottom: 30px;
+}
+
+#chart_bottom_title{
+	text-align: center;
+	font-size: 2em;
+	width: 100%;
+  margin: 30px;
+}
+
+.barLabel{
+	font-size:0.7em;
+	text-align: center;
+}
+
+.axis path{
+	stroke: white;
+	fill: none;
+}
+
+.axis .tick line{
+	stroke: black;
+}
+
+.axis .tick text{
+	font-size: 10;
+}
+
+
+.counties {
+  fill: none;
+}
+
+.states {
+  fill: none;
+  stroke: white;
+  stroke-linejoin: round;
+}
+
+.d3-tip{
+  font-size: 18px;
+  line-height: 1;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border-radius: 5px;
+  pointer-events: none;
+  font-family:avenir
+}
+.title{
+  font-family: avenir;
+  text-align: center;
+  padding: 5px 0px 0px 0px;
+  margin: 0px;
+}
+
+
+#chart_top_map{
+  box-shadow: 0px 5px 20px rgba(146,146,146,0.1);
+}
+
+.legend-title{
+  font-family: avenir;
+  fill:#969FA4;
+  font-weight: bold;
+  font-size: 0.5rem;
+}
+
+.legend-text{
+  font-family: avenir; 
+  fill:#5B5C5D;
+  font-weight: light;
+  font-size: 0.5rem;
+}
+
+/*html,body{
+  background: url('bg.jpg') no-repeat fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover
+ }
+*/
+
+.float{
+  border-radius: 5px;
+  padding:15px;
+  width: 320px;
+  height: auto;
+  background-color: gray;
+  float:right;
+  margin: 5px;
+  margin-left: 40px;
+  font-family: avenir;
+  color: white;
+}
+.list{
+  font-size: 15px;
+  list-style-type: none;
+  line-height: 40px;
+}
+/*.link a{
+  color: white;
+  text-decoration: none;
+}*/
+
+.q0-9 { fill:rgb(255,255,255); }
+.q1-9 { fill:rgb(240,240,240); }
+.q2-9 { fill:rgb(217,217,217); }
+.q3-9 { fill:rgb(189,189,189); }
+.q4-9 { fill:rgb(150,150,150); }
+.q5-9 { fill:rgb(115,115,115); }
+.q6-9 { fill:rgb(82,82,82); }
+.q7-9 { fill:rgb(37,37,37); }
+.q8-9 { fill:rgb(0,0,0); }
+.na{fill:rgb(230,220,200);}
+
+.overlay{
+  fill: none;
+  pointer-events: all;
+}
+
+
+#footnote{
+  font-size: 10px;
+}
+
+@media (min-width: 992px) {
+  .legend-text{
+    font-size: 12px;
+  }
+  .legend-title{
+    font-size: 12px;
+  }
+}

@@ -1,17 +1,17 @@
 'use client'
 import { motion } from 'motion/react'
 import { XIcon } from 'lucide-react'
-import { Spotlight } from '@/components/ui/spotlight'
-import { Magnetic } from '@/components/ui/magnetic'
+import { Spotlight } from '@/components/motion-primitives/spotlight'
+import { Magnetic } from '@/components/motion-primitives/magnetic'
 import {
   MorphingDialog,
   MorphingDialogTrigger,
   MorphingDialogContent,
   MorphingDialogClose,
   MorphingDialogContainer,
-} from '@/components/ui/morphing-dialog'
+} from '@/components/motion-primitives/morphing-dialog'
 import Link from 'next/link'
-import { AnimatedBackground } from '@/components/ui/animated-background'
+import { AnimatedBackground } from '@/components/motion-primitives/animated-background'
 import {
   PROJECTS,
   WORK_EXPERIENCE,
@@ -126,7 +126,7 @@ function MagneticSocialLink({
 export default function Personal() {
   return (
     <motion.main
-      className="space-y-24"
+      className="space-y-24 px-4 sm:px-6"
       variants={VARIANTS_CONTAINER}
       initial="hidden"
       animate="visible"
@@ -135,11 +135,11 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <div className="flex-1">
-          <p className="text-zinc-600 dark:text-zinc-400">
-            Focused on creating intuitive and performant web experiences.
-            Bridging the gap between design and development.
-          </p>
+        <div className="flex-1 pt-4">
+            <p className="font-base text-zinc-600 dark:text-zinc-400">
+              A thinker who builds. With 10+ years in automotive UX, I believe innovation happens where curiosity meets execution. 
+              For me, ideas only matter when they're made real.          
+            </p>
         </div>
       </motion.section>
 

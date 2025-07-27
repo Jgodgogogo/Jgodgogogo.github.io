@@ -29,31 +29,43 @@ type SocialLink = {
 
 export const PROJECTS: Project[] = [
   {
-    name: 'Motion Primitives Pro',
+    name: 'JLR 2025 Hackthon',
     description:
-      'Advanced components and templates to craft beautiful websites.',
-    link: 'https://pro.motion-primitives.com/',
+      'Placeholder for hackthon project',
+    link: 'https://google.com',
     video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+      'https://www.youtube.com/watch?v=B1TLhzmieVg',
     id: 'project1',
   },
   {
-    name: 'Motion Primitives',
-    description: 'UI kit to make beautiful, animated interfaces.',
-    link: 'https://motion-primitives.com/',
+    name: 'Volvo One HMI OS',
+    description: 'Placeholder for volvo cars project.',
+    link: 'https://google.com',
     video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
+      'https://www.youtube.com/watch?v=O4-lKcGIiBw',
     id: 'project2',
   },
+  {
+    name: 'SVW Project Sample',
+    description: 'Placeholder for SVW project experience.',
+    link: 'https://youtube.com/',
+    id: 'project3',
+  },
+  {
+    name: 'GM Project Sample',
+    description: 'Placeholder for GM project experience.',
+    link: 'https://youtube.com/',
+    id: 'project4',
+  },      
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    company: 'Reglazed Studio',
-    title: 'CEO',
-    start: '2024',
+    company: 'JLR China',
+    title: 'Lead ADAS Design Engineer',
+    start: '2024.12',
     end: 'Present',
-    link: 'https://ibelick.com',
+    link: '/https://linkedin.com/',
     id: 'work1',
   },
   {
