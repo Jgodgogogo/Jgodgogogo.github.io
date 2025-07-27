@@ -63,35 +63,6 @@
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
 }
-
-/* globals.css */
-@keyframes spin-once {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.animate-spin-once {
-  animation: spin-once 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-/* 头像悬停光标效果 */
-.cursor-avatar-hover {
-  cursor: none;
-}
-.cursor-avatar-hover:hover ~ .custom-cursor {
-  opacity: 1;
-  transform: scale(1);
-}
-.custom-cursor {
-  position: fixed;
-  pointer-events: none;
-  background: radial-gradient(circle, #7C3AED 0%, transparent 70%);
-  border-radius: 50%;
-  opacity: 0;
-  transform: scale(0.1);
-  transition: transform 0.3s ease, opacity 0.2s ease;
-  z-index: 9999;
-}
 /*
   ---break---
 */

@@ -1,4 +1,4 @@
-type Project = {
+interface Project {
   name: string
   description: string
   link: string
@@ -6,7 +6,7 @@ type Project = {
   id: string
 }
 
-type WorkExperience = {
+interface WorkExperience {
   company: string
   title: string
   start: string
@@ -15,14 +15,14 @@ type WorkExperience = {
   id: string
 }
 
-type BlogPost = {
+interface BlogPost {
   title: string
   description: string
   link: string
   uid: string
 }
 
-type SocialLink = {
+interface SocialLink {
   label: string
   link: string
 }
@@ -30,33 +30,32 @@ type SocialLink = {
 export const PROJECTS: Project[] = [
   {
     name: 'JLR 2025 Hackthon',
-    description:
-      'Placeholder for hackthon project',
+    description: 'Placeholder for hackthon project',
     link: 'https://google.com',
-    video:
-      'https://www.youtube.com/watch?v=B1TLhzmieVg',
-    id: 'project1',
+    video: 'https://www.youtube.com/watch?v=B1TLhzmieVg',
+    id: 'project1'
   },
   {
     name: 'Volvo One HMI OS',
     description: 'Placeholder for volvo cars project.',
     link: 'https://google.com',
-    video:
-      'https://www.youtube.com/watch?v=O4-lKcGIiBw',
-    id: 'project2',
+    video: 'https://www.youtube.com/watch?v=O4-lKcGIiBw',
+    id: 'project2'
   },
   {
     name: 'SVW Project Sample',
     description: 'Placeholder for SVW project experience.',
     link: 'https://youtube.com/',
-    id: 'project3',
+    video: 'https://www.youtube.com/watch?v=O4-lKcGIiBw',
+    id: 'project3'
   },
   {
     name: 'GM Project Sample',
     description: 'Placeholder for GM project experience.',
     link: 'https://youtube.com/',
-    id: 'project4',
-  },      
+    video: 'https://www.youtube.com/watch?v=O4-lKcGIiBw',
+    id: 'project4'
+  }
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
@@ -66,7 +65,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     start: '2024.12',
     end: 'Present',
     link: '/https://linkedin.com/',
-    id: 'work1',
+    id: 'work1'
   },
   {
     company: 'Freelance',
@@ -74,7 +73,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     start: '2022',
     end: '2024',
     link: 'https://ibelick.com',
-    id: 'work2',
+    id: 'work2'
   },
   {
     company: 'Freelance',
@@ -82,8 +81,8 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     start: '2017',
     end: 'Present',
     link: 'https://ibelick.com',
-    id: 'work3',
-  },
+    id: 'work3'
+  }
 ]
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -91,47 +90,45 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Exploring the Intersection of Design, AI, and Design Engineering',
     description: 'How AI is changing the way we design',
     link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-1',
+    uid: 'blog-1'
   },
   {
     title: 'Why I left my job to start my own company',
-    description:
-      'A deep dive into my decision to leave my job and start my own company',
+    description: 'A deep dive into my decision to leave my job and start my own company',
     link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-2',
+    uid: 'blog-2'
   },
   {
     title: 'What I learned from my first year of freelancing',
-    description:
-      'A look back at my first year of freelancing and what I learned',
+    description: 'A look back at my first year of freelancing and what I learned',
     link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-3',
+    uid: 'blog-3'
   },
   {
     title: 'How to Export Metadata from MDX for Next.js SEO',
     description: 'A guide on exporting metadata from MDX files to leverage Next.js SEO features.',
     link: '/blog/example-mdx-metadata',
-    uid: 'blog-4',
-  },
+    uid: 'blog-4'
+  }
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: 'Github',
-    link: 'https://github.com/ibelick',
+    link: 'https://github.com/ibelick'
   },
   {
     label: 'Twitter',
-    link: 'https://twitter.com/ibelick',
+    link: 'https://twitter.com/ibelick'
   },
   {
     label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/ibelick',
+    link: 'https://www.linkedin.com/in/ibelick'
   },
   {
     label: 'Instagram',
-    link: 'https://www.instagram.com/ibelick',
-  },
+    link: 'https://www.instagram.com/ibelick'
+  }
 ]
 
 export const EMAIL = 'your@email.com'

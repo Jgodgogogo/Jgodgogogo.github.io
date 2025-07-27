@@ -8,38 +8,32 @@ import {
   MorphingDialogTrigger,
   MorphingDialogContent,
   MorphingDialogClose,
-  MorphingDialogContainer,
+  MorphingDialogContainer
 } from '@/components/motion-primitives/morphing-dialog'
 import Link from 'next/link'
 import { AnimatedBackground } from '@/components/motion-primitives/animated-background'
-import {
-  PROJECTS,
-  WORK_EXPERIENCE,
-  BLOG_POSTS,
-  EMAIL,
-  SOCIAL_LINKS,
-} from './data'
+import { PROJECTS, WORK_EXPERIENCE, BLOG_POSTS, EMAIL, SOCIAL_LINKS } from './data'
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15,
-    },
-  },
+      staggerChildren: 0.15
+    }
+  }
 }
 
 const VARIANTS_SECTION = {
   hidden: { opacity: 0, y: 20, filter: 'blur(8px)' },
-  visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+  visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
 }
 
 const TRANSITION_SECTION = {
-  duration: 0.3,
+  duration: 0.3
 }
 
-type ProjectVideoProps = {
+interface ProjectVideoProps {
   src: string
 }
 
@@ -49,7 +43,7 @@ function ProjectVideo({ src }: ProjectVideoProps) {
       transition={{
         type: 'spring',
         bounce: 0,
-        duration: 0.3,
+        duration: 0.3
       }}
     >
       <MorphingDialogTrigger>
@@ -77,9 +71,9 @@ function ProjectVideo({ src }: ProjectVideoProps) {
             initial: { opacity: 0 },
             animate: {
               opacity: 1,
-              transition: { delay: 0.3, duration: 0.1 },
+              transition: { delay: 0.3, duration: 0.1 }
             },
-            exit: { opacity: 0, transition: { duration: 0 } },
+            exit: { opacity: 0, transition: { duration: 0 } }
           }}
         >
           <XIcon className="h-5 w-5 text-zinc-500" />
@@ -89,13 +83,7 @@ function ProjectVideo({ src }: ProjectVideoProps) {
   )
 }
 
-function MagneticSocialLink({
-  children,
-  link,
-}: {
-  children: React.ReactNode
-  link: string
-}) {
+function MagneticSocialLink({ children, link }: { children: React.ReactNode; link: string }) {
   return (
     <Magnetic springOptions={{ bounce: 0 }} intensity={0.3}>
       <a
@@ -131,22 +119,16 @@ export default function Personal() {
       initial="hidden"
       animate="visible"
     >
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
+      <motion.section variants={VARIANTS_SECTION} transition={TRANSITION_SECTION}>
         <div className="flex-1 pt-4">
-            <p className="font-base text-zinc-600 dark:text-zinc-400">
-              A thinker who builds. With 10+ years in automotive UX, I believe innovation happens where curiosity meets execution. 
-              For me, ideas only matter when they're made real.          
-            </p>
+          <p className="font-base text-zinc-600 dark:text-zinc-400">
+            A thinker who builds. With 10+ years in automotive UX, I believe innovation happens
+            where curiosity meets execution. For me, ideas only matter when they're made real.
+          </p>
         </div>
       </motion.section>
 
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
+      <motion.section variants={VARIANTS_SECTION} transition={TRANSITION_SECTION}>
         <h3 className="mb-5 text-lg font-medium">Selected Projects</h3>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {PROJECTS.map((project) => (
@@ -163,19 +145,14 @@ export default function Personal() {
                   {project.name}
                   <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 dark:bg-zinc-50 transition-all duration-200 group-hover:max-w-full"></span>
                 </a>
-                <p className="text-base text-zinc-600 dark:text-zinc-400">
-                  {project.description}
-                </p>
+                <p className="text-base text-zinc-600 dark:text-zinc-400">{project.description}</p>
               </div>
             </div>
           ))}
         </div>
       </motion.section>
 
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
+      <motion.section variants={VARIANTS_SECTION} transition={TRANSITION_SECTION}>
         <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
         <div className="flex flex-col space-y-2">
           {WORK_EXPERIENCE.map((job) => (
@@ -193,12 +170,8 @@ export default function Personal() {
               <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
                 <div className="relative flex w-full flex-row justify-between">
                   <div>
-                    <h4 className="font-normal dark:text-zinc-100">
-                      {job.title}
-                    </h4>
-                    <p className="text-zinc-500 dark:text-zinc-400">
-                      {job.company}
-                    </p>
+                    <h4 className="font-normal dark:text-zinc-100">{job.title}</h4>
+                    <p className="text-zinc-500 dark:text-zinc-400">{job.company}</p>
                   </div>
                   <p className="text-zinc-600 dark:text-zinc-400">
                     {job.start} - {job.end}
@@ -210,10 +183,7 @@ export default function Personal() {
         </div>
       </motion.section>
 
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
+      <motion.section variants={VARIANTS_SECTION} transition={TRANSITION_SECTION}>
         <h3 className="mb-3 text-lg font-medium">Blog</h3>
         <div className="flex flex-col space-y-0">
           <AnimatedBackground
@@ -222,7 +192,7 @@ export default function Personal() {
             transition={{
               type: 'spring',
               bounce: 0,
-              duration: 0.2,
+              duration: 0.2
             }}
           >
             {BLOG_POSTS.map((post) => (
@@ -233,12 +203,8 @@ export default function Personal() {
                 data-id={post.uid}
               >
                 <div className="flex flex-col space-y-1">
-                  <h4 className="font-normal dark:text-zinc-100">
-                    {post.title}
-                  </h4>
-                  <p className="text-zinc-500 dark:text-zinc-400">
-                    {post.description}
-                  </p>
+                  <h4 className="font-normal dark:text-zinc-100">{post.title}</h4>
+                  <p className="text-zinc-500 dark:text-zinc-400">{post.description}</p>
                 </div>
               </Link>
             ))}
@@ -246,10 +212,7 @@ export default function Personal() {
         </div>
       </motion.section>
 
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
+      <motion.section variants={VARIANTS_SECTION} transition={TRANSITION_SECTION}>
         <h3 className="mb-5 text-lg font-medium">Connect</h3>
         <p className="mb-5 text-zinc-600 dark:text-zinc-400">
           Feel free to contact me at{' '}
